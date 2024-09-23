@@ -1,23 +1,18 @@
-import Link from "next/link";
-/*import {getContent} from "@/data/content";
+import {getContent} from "@/data/content";
 
-export async function getServerSideProps({ res }) {
-    res.setHeader(
-        'Cache-Control',
-        'public, s-maxage=300, stale-while-revalidate=3600'
-    );
-
-    const content = await getContent('/lorem-ipsum');
-
+export async function getServerSideProps() {
+    //const content = await getContent('/articles/article-2');
+    const content = await getContent();
     return { props: { content }}
 }
-*/
-export default function FolderPage() {
+
+export default function FolderPage({ content }) {
+    //console.log(content);
     return (
         <main>
-            <h1>Tramp Creative</h1>
-            <h2>Coming Soon</h2>
-            <footer><p>Created by <Link href="https://www.huytonweb.com/" target="_blank">Huyton Web Services</Link></p></footer>
+            <h1>{content.title}</h1>
+            <h2>{content.heading}</h2>
+            <div dangerouslySetInnerHTML={{ __html: content.body }} />
         </main>
     );
 }
