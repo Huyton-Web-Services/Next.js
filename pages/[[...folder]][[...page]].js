@@ -18,6 +18,14 @@ export default function FolderPage({ content, mainMenu, resolvedUrl }) {
                 <title>{content.meta_title}</title>
                 <meta name="description" content={content.meta_description} />
                 <link rel="canonical" href={domain + resolvedUrl} />
+                {content.background_colour &&
+                    <style>{`
+                        body{
+                            background: ${content.background_colour};
+                            color: ${content.font_colour};
+                        }
+                    `}</style>
+                }
             </Head>
             <MainMenu mainMenu={mainMenu} />
             {content.main_image &&
