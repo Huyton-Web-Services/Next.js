@@ -40,6 +40,9 @@ export async function getContent(url = '/') {
         }
     }
 
+    let mainImage = jsonResponse.field_main_image && jsonResponse.field_main_image[0] ? jsonResponse.field_main_image[0] : null;
+    if (!mainImage && jsonResponse.field_image && jsonResponse.field_image[0] ) mainImage = jsonResponse.field_image[0];
+
     return {
         'title': jsonResponse.title[0].value,
         'heading': jsonResponse.field_subtitle && jsonResponse.field_subtitle[0] ? jsonResponse.field_subtitle[0].value : '',
@@ -49,7 +52,7 @@ export async function getContent(url = '/') {
         'created' : jsonResponse.created[0].value,
         'background_colour': jsonResponse.field_background_colour ? jsonResponse.field_background_colour[0].color : '#FFFFFF',
         'font_colour': jsonResponse.field_font_colour ? jsonResponse.field_font_colour[0].color : '#000000',
-        'main_image': jsonResponse.field_main_image && jsonResponse.field_main_image[0] ? jsonResponse.field_main_image[0] : null,
+        'main_image': mainImage,
         'error' : null,
     }
 }
