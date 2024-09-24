@@ -8,10 +8,11 @@ import {domain} from "@/pages/_app";
 export async function getServerSideProps({resolvedUrl}) {
     const content = await getContent(resolvedUrl);
     const mainMenu = await getMenu();
-    return { props: { content, mainMenu, resolvedUrl }}
+    const articlesMenu = await getMenu('articles');
+    return { props: { content, mainMenu, resolvedUrl, articlesMenu }}
 }
 
-export default function FolderPage({ content, mainMenu, resolvedUrl }) {
+export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMenu }) {
     return (
         <main>
             <Head>
@@ -27,7 +28,7 @@ export default function FolderPage({ content, mainMenu, resolvedUrl }) {
                     `}</style>
                 }
             </Head>
-            <MainMenu mainMenu={mainMenu} />
+            <MainMenu mainMenu={mainMenu} articlesMenu={articlesMenu} />
             {content.main_image &&
                 <Image
                     src={content.main_image.url}
