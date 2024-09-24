@@ -2,8 +2,6 @@ import {apiDomain} from "@/pages/_app";
 
 export async function getContent(url = '/') {
     const contentUrl = apiDomain + url + '?_format=json';
-    //console.log(contentUrl);
-
     const res = await fetch(
         contentUrl,
         {
@@ -30,20 +28,7 @@ export async function getContent(url = '/') {
 
     let jsonResponse;
     try{
-        // Return the full response
         jsonResponse =  await res.json();
-        return {
-            'title': jsonResponse.title[0].value,
-            'heading': jsonResponse.field_subtitle[0].value,
-            'body': jsonResponse.body[0].processed,
-            'meta_title' : jsonResponse.metatag[0].attributes.content,
-            'meta_description' : jsonResponse.metatag[1].attributes.content,
-            'created' : jsonResponse.created[0].value,
-            'background_colour': jsonResponse.field_background_colour[0].color,
-            'font_colour': jsonResponse.field_font_colour[0].color,
-            'main_image': jsonResponse.field_main_image[0],
-            'error' : null,
-        }
     }catch(e){
         return {
             'title': "API issue",
@@ -53,5 +38,18 @@ export async function getContent(url = '/') {
             'meta_description' : 'Missing API',
             'error' : 404,
         }
+    }
+
+    return {
+        'title': jsonResponse.title[0].value,
+        'heading': jsonResponse.field_subtitle && jsonResponse.field_subtitle[0] ? jsonResponse.field_subtitle[0].value : '',
+        'body': jsonResponse.body[0].processed,
+        'meta_title' : jsonResponse.metatag[0] ? jsonResponse.metatag[0].attributes.content : jsonResponse.title[0].value,
+        'meta_description' : jsonResponse.metatag[1] ? jsonResponse.metatag[1].attributes.content : 'A great meta description',
+        'created' : jsonResponse.created[0].value,
+        'background_colour': jsonResponse.field_background_colour ? jsonResponse.field_background_colour[0].color : '#FFFFFF',
+        'font_colour': jsonResponse.field_font_colour ? jsonResponse.field_font_colour[0].color : '#000000',
+        'main_image': jsonResponse.field_main_image && jsonResponse.field_main_image[0] ? jsonResponse.field_main_image[0] : [],
+        'error' : null,
     }
 }

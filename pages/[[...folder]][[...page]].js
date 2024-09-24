@@ -1,8 +1,7 @@
 import {getContent} from "@/data/content";
 
 export async function getServerSideProps() {
-    //const content = await getContent('/articles/article-2');
-    const content = await getContent();
+    const content = await getContent('/');
     return { props: { content }}
 }
 
