@@ -49,7 +49,7 @@ export async function getContent(url = '/') {
         'created' : jsonResponse.created[0].value,
         'background_colour': jsonResponse.field_background_colour ? jsonResponse.field_background_colour[0].color : '#FFFFFF',
         'font_colour': jsonResponse.field_font_colour ? jsonResponse.field_font_colour[0].color : '#000000',
-        'main_image': jsonResponse.field_main_image && jsonResponse.field_main_image[0] ? jsonResponse.field_main_image[0] : [],
+        'main_image': jsonResponse.field_main_image && jsonResponse.field_main_image[0] ? jsonResponse.field_main_image[0] : null,
         'error' : null,
     }
 }
