@@ -1,8 +1,15 @@
+import '@mantine/core/styles.css';
 import "../styles/globals.css";
+import { createTheme, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript } from '@mantine/core';
 import Head from "next/head";
 
 export const apiDomain = "https://cms.trampcreative.co.uk"; // Use CMS domain
 export const domain = "https://www.trampcreative.co.uk"; // Use your domain
+
+const theme = createTheme({
+    /** Put your mantine theme override here */
+});
 
 export default function MyApp({ Component, pageProps }) {
     return (
@@ -14,8 +21,16 @@ export default function MyApp({ Component, pageProps }) {
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="robots" content="all" />
+                <meta charSet="UTF-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <ColorSchemeScript />
             </Head>
-            <Component {...pageProps} />
+            <MantineProvider theme={theme}>
+                <Component {...pageProps} />
+            </MantineProvider>
         </>
     );
 }
