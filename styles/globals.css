@@ -1,3 +1,16 @@
+body{
+    background-color: #d7c4ad;
+    color: #333333;
+    overflow-y: scroll;
+}
+.MuiContainer-root{
+    background-color: #fffaf4;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 0 8px 4px rgba(0,0,0,.1);
+    border-radius: 6px;
+}
 .imageFix{
     max-width: 100%;
     height: auto;
