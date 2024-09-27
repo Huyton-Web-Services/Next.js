@@ -1,5 +1,8 @@
-import "../styles/globals.css";
 import Head from "next/head";
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from "@/theme";
+import "../styles/globals.css";
 
 export const apiDomain = "https://cms.trampcreative.co.uk"; // Use CMS domain
 export const domain = "https://www.trampcreative.co.uk"; // Use your domain
@@ -14,8 +17,12 @@ export default function MyApp({ Component, pageProps }) {
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="robots" content="all" />
+                <meta name="viewport" content="initial-scale=1, width=device-width" />
             </Head>
-            <Component {...pageProps} />
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Component {...pageProps} />
+            </ThemeProvider>
         </>
     );
 }
