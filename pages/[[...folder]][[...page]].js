@@ -36,6 +36,7 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
                     height={content.main_image.height}
                     alt={content.main_image.alt}
                     priority={true}
+                    className="imageFix"
                 />
             }
             <h1>{content.title}</h1>

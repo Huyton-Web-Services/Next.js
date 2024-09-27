@@ -2,7 +2,9 @@ import Head from "next/head";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from "@/theme";
+import Container from '@mui/material/Container';
 import "../styles/globals.css";
+
 
 export const apiDomain = "https://cms.trampcreative.co.uk"; // Use CMS domain
 export const domain = "https://www.trampcreative.co.uk"; // Use your domain
@@ -21,7 +23,9 @@ export default function MyApp({ Component, pageProps }) {
             </Head>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Component {...pageProps} />
+                <Container fixed>
+                    <Component {...pageProps} />
+                </Container>
             </ThemeProvider>
         </>
     );
