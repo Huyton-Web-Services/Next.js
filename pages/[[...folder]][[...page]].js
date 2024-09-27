@@ -22,8 +22,8 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
                 {content.background_colour &&
                     <style>{`
                         body{
-                            background: ${content.background_colour};
-                            color: ${content.font_colour};
+                            background: ${content.background_colour} !important;
+                            color: ${content.font_colour} !important;
                         }
                     `}</style>
                 }
