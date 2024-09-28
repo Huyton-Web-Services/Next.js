@@ -2,7 +2,8 @@
 const nextConfig = {
     experimental: {
         workerThreads: false,
-        cpus: 1
+        cpus: 1,
+        optimizePackageImports: ['@mantine/core', '@mantine/hooks']
     },
     images: {
         remotePatterns: [
