@@ -31,7 +31,7 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
                 }
             </Head>
             <MainMenu mainMenu={mainMenu} articlesMenu={articlesMenu} />
-            <Container bg="var(--mantine-color-colours-0)">
+            <Container className="mainContainer" bg="var(--mantine-color-colours-0)">
                 {content.main_image &&
                     <Image
                         src={content.main_image.url}
