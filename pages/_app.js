@@ -1,17 +1,22 @@
+import { Jost } from 'next/font/google';
 import '@mantine/core/styles.css';
 import "../styles/globals.css";
 import { createTheme, MantineProvider } from '@mantine/core';
 import { ColorSchemeScript } from '@mantine/core';
 import Head from "next/head";
 
+const jost = Jost({
+    weight: ['400', '700'],
+    style: ['normal', 'italic'],
+    subsets: ['latin'],
+});
+
 export const apiDomain = "https://cms.trampcreative.co.uk"; // Use CMS domain
 export const domain = "https://www.trampcreative.co.uk"; // Use your domain
 
-// Main colour #f1e4d4
-let myColour;
-myColour = [
-    "#fef4eb",
-    "#f3e9db",
+const colours = [
+    "#fffaf4", // Foreground
+    "#f1e4d4", // Background
     "#e6d0b7",
     "#d7b68e",
     "#cca16c",
@@ -23,8 +28,9 @@ myColour = [
 ];
 
 const theme = createTheme({
+    fontFamily: jost.style.fontFamily,
     colors: {
-        myColour,
+        colours,
     }
 });
 
