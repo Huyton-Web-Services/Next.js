@@ -1,3 +1,7 @@
 body{
     background-color: var(--mantine-color-colours-1);
 }
+.mantine-Container-root{
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
