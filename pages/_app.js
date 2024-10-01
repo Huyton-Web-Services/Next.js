@@ -2,7 +2,6 @@ import Head from "next/head";
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from "@/theme";
-import Container from '@mui/material/Container';
 import "../styles/globals.css";
 
 
@@ -23,9 +22,8 @@ export default function MyApp({ Component, pageProps }) {
             </Head>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Container fixed>
+
                     <Component {...pageProps} />
-                </Container>
             </ThemeProvider>
         </>
     );
