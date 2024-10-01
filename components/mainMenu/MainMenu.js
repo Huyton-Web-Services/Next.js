@@ -74,7 +74,7 @@ export function MainMenu({mainMenu, articlesMenu}){
                         aria-haspopup="true"
                         onClick={handleToggle}
                     >
-                        Articles
+                        Articles &#11167;
                     </Button>
                     <Popper
                         open={open}
