@@ -1,13 +1,13 @@
-import { Jost } from 'next/font/google';
+import { Fredoka } from 'next/font/google';
 import '@mantine/core/styles.css';
 import "../styles/globals.css";
 import { createTheme, MantineProvider } from '@mantine/core';
 import { ColorSchemeScript } from '@mantine/core';
 import Head from "next/head";
 
-const jost = Jost({
-    weight: ['400', '700'],
-    style: ['normal', 'italic'],
+const fredoka = Fredoka({
+    weight: ['300', '700'],
+    style: ['normal'],
     subsets: ['latin'],
 });
 
@@ -15,20 +15,20 @@ export const apiDomain = "https://cms.trampcreative.co.uk"; // Use CMS domain
 export const domain = "https://www.trampcreative.co.uk"; // Use your domain
 
 const colours = [
-    "#fffaf4", // Foreground
-    "#f1e4d4", // Background
-    "#e6d0b7",
-    "#d7b68e",
-    "#cca16c",
-    "#c49356",
-    "#c18c4a",
-    "#aa773b",
-    "#986a31",
-    "#855a26"
+    "#eeebff",
+    "#d7d0fa",
+    "#ab9df8",
+    "#7e66f7",
+    "#5939f7",
+    "#431ef7",
+    "#3712f8",
+    "#2b08dd",
+    "#2404c6",
+    "#1b00ad" // Main blue 9
 ];
 
 const theme = createTheme({
-    fontFamily: jost.style.fontFamily,
+    fontFamily: fredoka.style.fontFamily,
     colors: {
         colours,
     }
@@ -51,7 +51,7 @@ export default function MyApp({ Component, pageProps }) {
                 />
                 <ColorSchemeScript />
             </Head>
-            <MantineProvider theme={theme}>
+            <MantineProvider defaultColorScheme="dark" theme={theme}>
                 <Component {...pageProps} />
             </MantineProvider>
         </>

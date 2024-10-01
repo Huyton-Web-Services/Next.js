@@ -53,7 +53,7 @@ export function MainMenu({mainMenu, articlesMenu}){
         <header className={classes.header}>
             <Container size="md">
                 <div className={classes.inner}>
-                    <h2>Tramp Creative</h2>
+                    <h2><strong>Curabitur</strong></h2>
                     <Group gap={5} visibleFrom="sm">
                         {items}
                     </Group>

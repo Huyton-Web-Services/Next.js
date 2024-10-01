@@ -21,27 +21,22 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
                 <title>{content.meta_title}</title>
                 <meta name="description" content={content.meta_description} />
                 <link rel="canonical" href={domain + resolvedUrl} />
-                {content.background_colour &&
-                    <style>{`
-                        body{
-                            background: ${content.background_colour};
-                            color: ${content.font_colour};
-                        }
-                    `}</style>
-                }
             </Head>
             <MainMenu mainMenu={mainMenu} articlesMenu={articlesMenu} />
-            <Container className="mainContainer" bg="var(--mantine-color-colours-0)">
-                {content.main_image &&
-                    <Image
-                        src={content.main_image.url}
-                        alt={content.main_image.alt}
-                        fit="contain"
-                    />
-                }
-                <h1>{content.title}</h1>
-                <h2>{content.heading}</h2>
-                <div dangerouslySetInnerHTML={{ __html: content.body }} />
+            <Container className="mainContainer">
+                <h1 color={'#ff'}>{content.title}</h1>
+                <p>{content.heading}</p>
+
+                <Container className="contentContainer" bg="var(--mantine-color-white)">
+                    {content.main_image &&
+                        <Image
+                            src={content.main_image.url}
+                            alt={content.main_image.alt}
+                            fit="contain"
+                        />
+                    }
+                    <div dangerouslySetInnerHTML={{ __html: content.body }} />
+                </Container>
             </Container>
         </main>
     );

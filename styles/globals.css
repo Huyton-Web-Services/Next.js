@@ -1,8 +1,20 @@
+html, body{
+    min-height: 100vh;
+}
 body{
-    background-color: var(--mantine-color-colours-1);
+    /*background-color: var(--mantine-color-black);*/
+    background: linear-gradient(45deg, rgba(255,255,255,1) 20%, rgba(12,0,78,1) 64%, rgba(0,0,0,1) 100%);
+    color: #ffffff;
     overflow-y: scroll;
 }
+h1{
+    font-size: 42px;
+}
+
 .mainContainer{
+}
+.contentContainer{
+    color: #000000;
     padding-top: 20px;
     padding-bottom: 40px;
 }
