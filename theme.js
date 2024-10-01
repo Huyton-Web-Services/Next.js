@@ -1,8 +1,8 @@
-import { Jost } from 'next/font/google';
+import { Fredoka } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
-const jost = Jost({
+const fredoka = Fredoka({
     weight: ['300', '400', '500', '700'],
     subsets: ['latin'],
     display: 'swap',
@@ -22,7 +22,7 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: jost.style.fontFamily,
+        fontFamily: fredoka.style.fontFamily,
     },
 });
 
