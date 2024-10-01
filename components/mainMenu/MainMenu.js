@@ -51,15 +51,13 @@ export function MainMenu({mainMenu, articlesMenu}){
 
     return (
         <header className={classes.header}>
-            <Container size="md">
-                <div className={classes.inner}>
-                    <h2><strong>Curabitur</strong></h2>
-                    <Group gap={5} visibleFrom="sm">
-                        {items}
-                    </Group>
-                    <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-                </div>
-            </Container>
+            <div className={classes.mainMenu}>
+                <h2><Link href={'/'}>Curabitur</Link></h2>
+                <Group gap={5} visibleFrom="sm">
+                    {items}
+                </Group>
+                <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+            </div>
         </header>
     );
 }

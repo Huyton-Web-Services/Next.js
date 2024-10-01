@@ -15,6 +15,10 @@ h1{
 }
 .contentContainer{
     color: #000000;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding: 20px;
+
+    .cmsContent{
+        position: relative;
+        top: -20px;
+    }
 }
