@@ -54,7 +54,7 @@ export function MainMenu({mainMenu, articlesMenu}){
                     component="div"
                     sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                 >
-                    Tramp Creative
+                    <Link className="logo" href={'/'}>Curabitur</Link>
                 </Typography>
                 <Divider />
                 <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
