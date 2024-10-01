@@ -19,28 +19,40 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
                 <title>{content.meta_title}</title>
                 <meta name="description" content={content.meta_description} />
                 <link rel="canonical" href={domain + resolvedUrl} />
-                {content.background_colour &&
-                    <style>{`
-                        body{
-                            background: ${content.background_colour};
-                            color: ${content.font_colour};
-                        }
-                    `}</style>
-                }
             </Head>
             <MainMenu mainMenu={mainMenu} articlesMenu={articlesMenu} />
-            {content.main_image &&
-                <Image
-                    src={content.main_image.url}
-                    width={content.main_image.width}
-                    height={content.main_image.height}
-                    alt={content.main_image.alt}
-                    priority={true}
-                />
-            }
-            <h1>{content.title}</h1>
-            <h2>{content.heading}</h2>
-            <div dangerouslySetInnerHTML={{ __html: content.body }} />
+
+            <div className="container headingContent">
+                <div className="row">
+                    <div className="col-12 col-md-8">
+                        <h1>{content.title}</h1>
+                    </div>
+                    <div className="col-12 col-md-4">
+                        <p>{content.heading}</p>
+                    </div>
+                </div>
+            </div>
+            <div className="container mainContent">
+                { content.main_image ?
+                    <div className="row">
+                        <div className="col-12 col-md-6">
+                            <Image
+                                src={content.main_image.url}
+                                width={content.main_image.width}
+                                height={content.main_image.height}
+                                alt={content.main_image.alt}
+                                priority={true}
+                                className="imageFix"
+                            />
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <div dangerouslySetInnerHTML={{ __html: content.body }} />
+                        </div>
+                    </div>
+                    :
+                    <div dangerouslySetInnerHTML={{ __html: content.body }} />
+                }
+            </div>
         </>
     );
 }

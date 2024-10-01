@@ -23,8 +23,34 @@ body{
   a{
     color: #ffffff;
   }
+
+  .navbar-brand.active,
+  .navbar-brand:active,
+  .navbar-brand:hover,
+  .navbar-brand:focus,
+  .nav-link.active,
+  .nav-link:active,
   .nav-link:hover,
   .nav-link:focus{
     color: #9488dc;
   }
+}
+
+.imageFix{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.headingContent{
+  color: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+.mainContent{
+  color: #000000;
+  background-color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
