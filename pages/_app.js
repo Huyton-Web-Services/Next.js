@@ -1,4 +1,5 @@
-import "../styles/globals.css";
+import Bootstrap from "../components/bootstrap/Bootstrap";
+import "../styles/globals.scss";
 import Head from "next/head";
 
 export const apiDomain = "https://cms.trampcreative.co.uk"; // Use CMS domain
@@ -17,6 +18,7 @@ export default function MyApp({ Component, pageProps }) {
                 <meta name="robots" content="all" />
             </Head>
             <Component {...pageProps} />
+            <Bootstrap/>
         </>
     );
 }
