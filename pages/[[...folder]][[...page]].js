@@ -35,7 +35,7 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
 
             <MainMenu mainMenu={mainMenu} articlesMenu={articlesMenu} />
 
-            <Container>
+            <Container className="headerContent">
                 <Row>
                     <Col md={12} lg={8}>
                         <h1>{content.title}</h1>
@@ -46,7 +46,7 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
                 </Row>
             </Container>
 
-            <Container>
+            <Container className="mainContent rounded-top" >
                 {content.main_image ?
                     <Row>
                         <Col md={12} lg={6}>
