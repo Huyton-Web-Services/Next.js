@@ -1,13 +1,19 @@
+import { Fredoka } from 'next/font/google';
 import Bootstrap from "../components/bootstrap/Bootstrap";
 import "../styles/globals.scss";
 import Head from "next/head";
+
+const fredoka = Fredoka({
+    weight: '300', // 700 for bold
+    subsets: ['latin'],
+});
 
 export const apiDomain = "https://cms.trampcreative.co.uk"; // Use CMS domain
 export const domain = "https://www.trampcreative.co.uk"; // Use your domain
 
 export default function MyApp({ Component, pageProps }) {
     return (
-        <>
+        <main className={fredoka.className}>
             <Head>
                 <meta charSet="utf-8" />
                 <link rel="icon" href="/favicon.ico" />
@@ -19,6 +25,6 @@ export default function MyApp({ Component, pageProps }) {
             </Head>
             <Component {...pageProps} />
             <Bootstrap/>
-        </>
+        </main>
     );
 }
