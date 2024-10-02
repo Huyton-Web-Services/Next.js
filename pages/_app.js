@@ -1,3 +1,4 @@
+import { ChakraProvider } from '@chakra-ui/react'
 import "../styles/globals.css";
 import Head from "next/head";
 
@@ -15,7 +16,9 @@ export default function MyApp({ Component, pageProps }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="robots" content="all" />
             </Head>
-            <Component {...pageProps} />
+            <ChakraProvider>
+                <Component {...pageProps} />
+            </ChakraProvider>
         </>
     );
 }
