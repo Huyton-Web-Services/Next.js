@@ -1,13 +1,19 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react';
 import "../styles/globals.css";
 import Head from "next/head";
+import { Fredoka } from 'next/font/google';
+
+const fredoka = Fredoka({
+    subsets: ['latin'],
+    variable: '--font-rubik',
+})
 
 export const apiDomain = "https://cms.trampcreative.co.uk"; // Use CMS domain
 export const domain = "https://www.trampcreative.co.uk"; // Use your domain
 
 export default function MyApp({ Component, pageProps }) {
     return (
-        <>
+        <main className={fredoka.className}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -19,6 +25,6 @@ export default function MyApp({ Component, pageProps }) {
             <ChakraProvider>
                 <Component {...pageProps} />
             </ChakraProvider>
-        </>
+        </main>
     );
 }
