@@ -39,7 +39,7 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
                     priority={true}
                 />
             }
-            <div className="prose" dangerouslySetInnerHTML={{ __html: content.body }} />
+            <div className="prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: content.body }} />
         </main>
     );
 }
