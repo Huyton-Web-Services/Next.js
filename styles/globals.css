@@ -18,6 +18,13 @@ we still enforce color-scheme: dark, despite the user preference */
     }
 }
 
+html, body{
+    min-height: 100vh;
+}
+body{
+    overflow-y: scroll;
+}
+
 .prose{
     max-width: 100%;
 }

@@ -25,21 +25,28 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
 
             <MainMenu mainMenu={mainMenu} articlesMenu={articlesMenu} />
 
+            <div className="container mx-auto py-20 mb-10 clear-both">
+                    <h1 className="text-7xl w-3/4 float-start clear-start">{content.title}</h1>
+                    <h2 className="text-2xl w-1/4 float-end clear-end">{content.heading}</h2>
+            </div>
 
-            <h1>{content.title}</h1>
-            <h2>{content.heading}</h2>
-
-
-            {content.main_image &&
-                <Image
-                    src={content.main_image.url}
-                    width={content.main_image.width}
-                    height={content.main_image.height}
-                    alt={content.main_image.alt}
-                    priority={true}
-                />
-            }
-            <div className="prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: content.body }} />
+            <div className="container mx-auto bg-white p-4 rounded-t-md clear-both">
+                {content.main_image ?
+                    <div className="lg:columns-2">
+                        <Image
+                            src={content.main_image.url}
+                            width={content.main_image.width}
+                            height={content.main_image.height}
+                            alt={content.main_image.alt}
+                            priority={true}
+                            className="break-after-column"
+                        />
+                        <div className="prose" dangerouslySetInnerHTML={{ __html: content.body }} />
+                    </div>
+                    :
+                    <div className="prose" dangerouslySetInnerHTML={{ __html: content.body }} />
+                }
+            </div>
         </main>
     );
 }
