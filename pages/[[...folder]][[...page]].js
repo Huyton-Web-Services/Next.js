@@ -21,13 +21,11 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
                 <link rel="canonical" href={domain + resolvedUrl} />
             </Head>
 
-
-
             <MainMenu mainMenu={mainMenu} articlesMenu={articlesMenu} />
 
-            <div className="container mx-auto py-20 mb-10 clear-both">
-                    <h1 className="text-7xl w-3/4 float-start clear-start">{content.title}</h1>
-                    <h2 className="text-2xl w-1/4 float-end clear-end">{content.heading}</h2>
+            <div className="container mx-auto py-20 clear-both">
+                <h1 className="text-7xl w-3/4 mb-4 float-start clear-start">{content.title}</h1>
+                <h2 className="text-2xl w-1/4 mb-4 float-end clear-end">{content.heading}</h2>
             </div>
 
             <div className="container mx-auto bg-white p-4 rounded-t-md clear-both">
