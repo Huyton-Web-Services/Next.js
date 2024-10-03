@@ -14,7 +14,7 @@ export async function getServerSideProps({resolvedUrl}) {
 
 export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMenu }) {
     return (
-        <main>
+        <>
             <Head>
                 <title>{content.meta_title}</title>
                 <meta name="description" content={content.meta_description} />
@@ -41,6 +41,6 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
             <h1>{content.title}</h1>
             <h2>{content.heading}</h2>
             <div className="prose" dangerouslySetInnerHTML={{ __html: content.body }} />
-        </main>
+        </>
     );
 }
