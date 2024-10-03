@@ -40,7 +40,7 @@ export default function FolderPage({ content, mainMenu, resolvedUrl, articlesMen
             }
             <h1>{content.title}</h1>
             <h2>{content.heading}</h2>
-            <div dangerouslySetInnerHTML={{ __html: content.body }} />
+            <div className="prose" dangerouslySetInnerHTML={{ __html: content.body }} />
         </main>
     );
 }
